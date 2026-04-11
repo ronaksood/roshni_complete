@@ -222,3 +222,4 @@ change my app color theme to burgundy as primary color for body text use beige c
 p4:
 make sure how email works perfectly , when order placed , email credentials are perfect, also implement filter logic in product page, based on (based on category wise etc ) dont break any exsiting website , also when user click on one product , it should open a detailed new page. where a detailed product description will be shown, (diuff images, product description price , rating etc.) 
 don't break any existing website or feature ask me if need any question
+
