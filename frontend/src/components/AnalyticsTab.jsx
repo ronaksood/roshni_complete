@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import axios from "../lib/axios";
-import { Users, Package, ShoppingCart, DollarSign } from "lucide-react";
+import { Users, Package, ShoppingCart, IndianRupee } from "lucide-react";
 import {
   LineChart,
   Line,
@@ -12,6 +12,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import { formatCurrencyINR } from "../lib/currency";
 
 const AnalyticsTab = () => {
   const [analyticsData, setAnalyticsData] = useState({
@@ -51,29 +52,29 @@ const AnalyticsTab = () => {
           title="Total Users"
           value={analyticsData.users.toLocaleString()}
           icon={Users}
-          color="from-emerald-500 to-teal-700"
+          color="from-[#7c1f3d] to-[#9b4663]"
         />
         <AnalyticsCard
           title="Total Products"
           value={analyticsData.products.toLocaleString()}
           icon={Package}
-          color="from-emerald-500 to-green-700"
+          color="from-[#561427] to-[#7c1f3d]"
         />
         <AnalyticsCard
           title="Total Sales"
           value={analyticsData.totalSales.toLocaleString()}
           icon={ShoppingCart}
-          color="from-emerald-500 to-cyan-700"
+          color="from-[#8e5067] to-[#b47c8f]"
         />
         <AnalyticsCard
           title="Total Revenue"
-          value={`$${analyticsData.totalRevenue.toLocaleString()}`}
-          icon={DollarSign}
-          color="from-emerald-500 to-lime-700"
+          value={formatCurrencyINR(analyticsData.totalRevenue)}
+          icon={IndianRupee}
+          color="from-[#b77b8f] to-[#d8b8a7]"
         />
       </div>
       <motion.div
-        className="bg-gray-800/60 rounded-lg p-6 shadow-lg"
+        className="lux-card p-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.25 }}
@@ -81,16 +82,16 @@ const AnalyticsTab = () => {
         <ResponsiveContainer width="100%" height={400}>
           <LineChart data={dailySalesData}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" stroke="#D1D5DB" />
-            <YAxis yAxisId="left" stroke="#D1D5DB" />
-            <YAxis yAxisId="right" orientation="right" stroke="#D1D5DB" />
+            <XAxis dataKey="name" stroke="#72655A" />
+            <YAxis yAxisId="left" stroke="#72655A" />
+            <YAxis yAxisId="right" orientation="right" stroke="#72655A" />
             <Tooltip />
             <Legend />
             <Line
               yAxisId="left"
               type="monotone"
               dataKey="sales"
-              stroke="#10B981"
+              stroke="#7C1F3D"
               activeDot={{ r: 8 }}
               name="Sales"
             />
@@ -98,7 +99,7 @@ const AnalyticsTab = () => {
               yAxisId="right"
               type="monotone"
               dataKey="revenue"
-              stroke="#3B82F6"
+              stroke="#B77B8F"
               activeDot={{ r: 8 }}
               name="Revenue"
             />
@@ -112,19 +113,19 @@ export default AnalyticsTab;
 
 const AnalyticsCard = ({ title, value, icon: Icon, color }) => (
   <motion.div
-    className={`bg-gray-800 rounded-lg p-6 shadow-lg overflow-hidden relative ${color}`}
+    className="lux-card p-6 overflow-hidden relative"
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
   >
     <div className="flex justify-between items-center">
       <div className="z-10">
-        <p className="text-emerald-300 text-sm mb-1 font-semibold">{title}</p>
-        <h3 className="text-white text-3xl font-bold">{value}</h3>
+        <p className="text-[var(--color-muted)] text-sm mb-1 font-semibold">{title}</p>
+        <h3 className="text-[var(--color-ink)] text-3xl font-bold">{value}</h3>
       </div>
     </div>
-    <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 to-emerald-900 opacity-30" />
-    <div className="absolute -bottom-4 -right-4 text-emerald-800 opacity-50">
+    <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-10`} />
+    <div className="absolute -bottom-4 -right-4 text-[rgba(124,31,61,0.14)]">
       <Icon className="h-32 w-32" />
     </div>
   </motion.div>

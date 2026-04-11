@@ -4,7 +4,14 @@ import axios from "../lib/axios";
 
 export const useProductStore = create((set) => ({
   products: [],
+  featuredProducts: [],
+  catalogProducts: [],
+  selectedProduct: null,
+  relatedProducts: [],
   loading: false,
+  catalogLoading: false,
+  productLoading: false,
+  error: null,
 
   setProducts: (products) => set({ products }),
   createProduct: async (productData) => {
@@ -32,13 +39,27 @@ export const useProductStore = create((set) => ({
     }
   },
   fetchProductsByCategory: async (category) => {
-    set({ loading: true });
+    set({ catalogLoading: true, error: null });
     try {
-      const response = await axios.get(`/products/category/${category}`);
-      set({ products: response.data.products, loading: false });
+      const response = await axios.get("/products/catalog", {
+        params: { category },
+      });
+      set({ catalogProducts: response.data.products, catalogLoading: false });
     } catch (error) {
-      set({ error: "Failed to fetch products", loading: false });
+      set({ error: "Failed to fetch products", catalogLoading: false });
       toast.error(error.response.data.error || "Failed to fetch products");
+    }
+  },
+  fetchCatalogProducts: async (filters = {}) => {
+    set({ catalogLoading: true, error: null });
+    try {
+      const response = await axios.get("/products/catalog", {
+        params: filters,
+      });
+      set({ catalogProducts: response.data.products, catalogLoading: false });
+    } catch (error) {
+      set({ error: "Failed to fetch products", catalogLoading: false });
+      toast.error(error.response?.data?.error || "Failed to fetch products");
     }
   },
   deleteProduct: async (productId) => {
@@ -79,10 +100,33 @@ export const useProductStore = create((set) => ({
     set({ loading: true });
     try {
       const response = await axios.get("/products/featured");
-      set({ products: response.data, loading: false });
+      set({ featuredProducts: response.data, loading: false });
     } catch (error) {
       set({ error: "Failed to fetch products", loading: false });
       console.log("Error fetching featured products:", error);
     }
   },
+  fetchProductById: async (productId) => {
+    set({ productLoading: true, error: null, selectedProduct: null });
+    try {
+      const response = await axios.get(`/products/details/${productId}`);
+      set({
+        selectedProduct: response.data.product,
+        relatedProducts: response.data.relatedProducts || [],
+        productLoading: false,
+      });
+    } catch (error) {
+      set({
+        error: "Failed to fetch product details",
+        productLoading: false,
+        selectedProduct: null,
+        relatedProducts: [],
+      });
+      toast.error(
+        error.response?.data?.message || "Failed to fetch product details"
+      );
+    }
+  },
+  clearSelectedProduct: () =>
+    set({ selectedProduct: null, relatedProducts: [], productLoading: false }),
 }));

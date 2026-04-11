@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { MoveRight } from "lucide-react";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "../lib/axios";
+import { formatCurrencyINR } from "../lib/currency";
 
 const stripePromise = loadStripe(
   "pk_test_51Q5SRkLUGfbiowZhIODmT3tnZa0Shac0VEX8BGBWd8ybkAzm5InqLnQbu0QzdULd6o4ALV6SYWmvHQCs5daCEXD700O0ZLxo0Q"
@@ -13,9 +14,9 @@ const OrderSummary = () => {
   const { total, subtotal, coupon, isCouponApplied, cart } = useCartStore();
 
   const savings = subtotal - total;
-  const formattedSubtotal = subtotal.toFixed(2);
-  const formattedTotal = total.toFixed(2);
-  const formattedSavings = savings.toFixed(2);
+  const formattedSubtotal = formatCurrencyINR(subtotal);
+  const formattedTotal = formatCurrencyINR(total);
+  const formattedSavings = formatCurrencyINR(savings);
 
   const handlePayment = async () => {
     const stripe = await stripePromise;
@@ -37,53 +38,57 @@ const OrderSummary = () => {
 
   return (
     <motion.div
-      className="space-y-4 rounded-lg border border-gray-700 bg-gray-800 p-4 shadow-sm sm:p-6"
+      className="lux-card space-y-4 p-4 sm:p-6"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <p className="text-xl font-semibold text-emerald-400">Order summary</p>
+      <p className="font-display text-3xl font-semibold text-[var(--color-accent-deep)]">
+        Order summary
+      </p>
 
       <div className="space-y-4">
         <div className="space-y-2">
           <dl className="flex items-center justify-between gap-4">
-            <dt className="text-base font-normal text-gray-300">
+            <dt className="text-base font-normal text-[var(--color-muted)]">
               Original price
             </dt>
-            <dd className="text-base font-medium text-white">
-              ${formattedSubtotal}
+            <dd className="text-base font-medium text-[var(--color-ink)]">
+              {formattedSubtotal}
             </dd>
           </dl>
 
           {savings > 0 && (
             <dl className="flex items-center justify-between gap-4">
-              <dt className="text-base font-normal text-gray-300">Savings</dt>
-              <dd className="text-base font-medium text-emerald-400">
-                -${formattedSavings}
+              <dt className="text-base font-normal text-[var(--color-muted)]">
+                Savings
+              </dt>
+              <dd className="text-base font-medium text-[var(--color-success)]">
+                -{formattedSavings}
               </dd>
             </dl>
           )}
 
           {coupon && isCouponApplied && (
             <dl className="flex items-center justify-between gap-4">
-              <dt className="text-base font-normal text-gray-300">
+              <dt className="text-base font-normal text-[var(--color-muted)]">
                 Coupon ({coupon.code})
               </dt>
-              <dd className="text-base font-medium text-emerald-400">
+              <dd className="text-base font-medium text-[var(--color-success)]">
                 -{coupon.discountPercentage}%
               </dd>
             </dl>
           )}
-          <dl className="flex items-center justify-between gap-4 border-t border-gray-600 pt-2">
-            <dt className="text-base font-bold text-white">Total</dt>
-            <dd className="text-base font-bold text-emerald-400">
-              ${formattedTotal}
+          <dl className="flex items-center justify-between gap-4 border-t pt-3">
+            <dt className="text-base font-bold text-[var(--color-ink)]">Total</dt>
+            <dd className="text-base font-bold text-[var(--color-accent-deep)]">
+              {formattedTotal}
             </dd>
           </dl>
         </div>
 
         <motion.button
-          className="flex w-full items-center justify-center rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-300"
+          className="lux-btn-primary flex w-full items-center justify-center"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handlePayment}
@@ -92,10 +97,10 @@ const OrderSummary = () => {
         </motion.button>
 
         <div className="flex items-center justify-center gap-2">
-          <span className="text-sm font-normal text-gray-400">or</span>
+          <span className="text-sm font-normal text-[var(--color-muted)]">or</span>
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-sm font-medium text-emerald-400 underline hover:text-emerald-300 hover:no-underline"
+            className="inline-flex items-center gap-2 text-sm font-medium text-[var(--color-accent-deep)] underline hover:no-underline"
           >
             Continue Shopping
             <MoveRight size={16} />

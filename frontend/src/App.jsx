@@ -13,22 +13,25 @@ import CartPage from "./pages/CartPage";
 import { useCartStore } from "./stores/useCartStore";
 import PurchaseSuccessPage from "./pages/PurchaseSuccessPage";
 import PurchaseCancelPage from "./pages/PurchaseCancelPage";
+import TrackOrderPage from "./pages/TrackOrderPage";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
+
 function App() {
   const { user, checkAuth, checkingAuth } = useUserStore();
   const { getCartItems } = useCartStore();
+
   useEffect(() => {
     checkAuth();
     if (user) getCartItems();
   }, [checkAuth, getCartItems]);
+
   if (checkingAuth) return <LoadingSpinner />;
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white relative overflow-hidden">
-      {/* Background gradient */}
+    <div className="min-h-screen text-[var(--color-ink)] relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.3)_0%,rgba(10,80,60,0.2)_45%,rgba(0,0,0,0.1)_100%)]" />
-        </div>
+        <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(124,31,61,0.18),transparent_68%)]" />
+        <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(240,220,208,0.3),transparent_70%)]" />
       </div>
       <div className="relative z-50 pt-20">
         <Navbar />
@@ -46,18 +49,7 @@ function App() {
             element={user ? <Navigate to={"/"} /> : <LoginPage />}
           />
           <Route path="/category/:category" element={<CategoryPage />} />
-          <Route
-            path="/secret-dashboard"
-            element={
-              user?.role === "admin" ? <AdminPage /> : <Navigate to={"/"} />
-            }
-          />
-          <Route
-            path="/secret-dashboard"
-            element={
-              user?.role === "admin" ? <AdminPage /> : <Navigate to={"/"} />
-            }
-          />
+          <Route path="/products/:productId" element={<ProductDetailsPage />} />
           <Route
             path="/secret-dashboard"
             element={
@@ -71,6 +63,10 @@ function App() {
 
           <Route path="/purchase-success" element={<PurchaseSuccessPage />} />
           <Route path="/purchase-cancel" element={<PurchaseCancelPage />} />
+          <Route
+            path="/orders/:orderId/tracking"
+            element={user ? <TrackOrderPage /> : <Navigate to="/login" />}
+          />
         </Routes>
       </div>
       <Toaster />

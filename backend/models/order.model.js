@@ -1,5 +1,13 @@
 import mongoose from "mongoose";
 
+const orderStatuses = [
+  "confirmed",
+  "packed",
+  "shipped",
+  "out_for_delivery",
+  "delivered",
+];
+
 const orderSchema = new mongoose.Schema(
   {
     user: {
@@ -31,9 +39,39 @@ const orderSchema = new mongoose.Schema(
       required: true,
       min: 0,
     },
+    status: {
+      type: String,
+      enum: orderStatuses,
+      default: "confirmed",
+    },
+    trackingNumber: {
+      type: String,
+      unique: true,
+      sparse: true,
+    },
+    estimatedDeliveryDate: {
+      type: Date,
+    },
     stripeSessionId: {
       type: String,
       unique: true,
+    },
+    confirmationEmail: {
+      sentAt: {
+        type: Date,
+      },
+      lastAttemptAt: {
+        type: Date,
+      },
+      recipient: {
+        type: String,
+        trim: true,
+        lowercase: true,
+      },
+      error: {
+        type: String,
+        trim: true,
+      },
     },
   },
   { timestamps: true }
@@ -42,3 +80,4 @@ const orderSchema = new mongoose.Schema(
 const Order = mongoose.model("Order", orderSchema);
 
 export default Order;
+export { orderStatuses };

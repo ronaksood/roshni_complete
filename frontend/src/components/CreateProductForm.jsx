@@ -4,13 +4,10 @@ import { PlusCircle, Upload, Loader } from "lucide-react";
 import { useProductStore } from "../stores/useProductStore";
 
 const categories = [
-  "jeans",
-  "t-shirts",
-  "shoes",
-  "glasses",
-  "jackets",
-  "suits",
-  "bags",
+  "choker",
+  "necklace",
+  "mangalsutra",
+  "watch",
 ];
 
 const CreateProductForm = () => {
@@ -56,12 +53,12 @@ const CreateProductForm = () => {
 
   return (
     <motion.div
-      className="bg-gray-800 shadow-lg rounded-lg p-8 mb-8 max-w-xl mx-auto"
+      className="lux-card p-8 mb-8 max-w-xl mx-auto"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <h2 className="text-2xl font-semibold mb-6 text-emerald-300">
+      <h2 className="font-display text-4xl font-semibold mb-6 text-[var(--color-accent-deep)]">
         Create New Product
       </h2>
 
@@ -69,7 +66,7 @@ const CreateProductForm = () => {
         <div>
           <label
             htmlFor="name"
-            className="block text-sm font-medium text-gray-300"
+            className="block text-sm font-medium text-[var(--color-muted)]"
           >
             Product Name
           </label>
@@ -81,9 +78,7 @@ const CreateProductForm = () => {
             onChange={(e) =>
               setNewProduct({ ...newProduct, name: e.target.value })
             }
-            className="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2
-						 px-3 text-white focus:outline-none focus:ring-2
-						focus:ring-emerald-500 focus:border-emerald-500"
+            className="lux-input mt-1"
             required
           />
         </div>
@@ -91,7 +86,7 @@ const CreateProductForm = () => {
         <div>
           <label
             htmlFor="description"
-            className="block text-sm font-medium text-gray-300"
+            className="block text-sm font-medium text-[var(--color-muted)]"
           >
             Description
           </label>
@@ -103,9 +98,7 @@ const CreateProductForm = () => {
               setNewProduct({ ...newProduct, description: e.target.value })
             }
             rows="3"
-            className="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm
-						 py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 
-						 focus:border-emerald-500"
+            className="lux-input mt-1"
             required
           />
         </div>
@@ -113,7 +106,7 @@ const CreateProductForm = () => {
         <div>
           <label
             htmlFor="price"
-            className="block text-sm font-medium text-gray-300"
+            className="block text-sm font-medium text-[var(--color-muted)]"
           >
             Price
           </label>
@@ -125,10 +118,8 @@ const CreateProductForm = () => {
             onChange={(e) =>
               setNewProduct({ ...newProduct, price: e.target.value })
             }
-            step="0.1"
-            className="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm 
-						py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500
-						 focus:border-emerald-500"
+            step="1"
+            className="lux-input mt-1"
             required
           />
         </div>
@@ -136,7 +127,7 @@ const CreateProductForm = () => {
         <div>
           <label
             htmlFor="category"
-            className="block text-sm font-medium text-gray-300"
+            className="block text-sm font-medium text-[var(--color-muted)]"
           >
             Category
           </label>
@@ -147,9 +138,7 @@ const CreateProductForm = () => {
             onChange={(e) =>
               setNewProduct({ ...newProduct, category: e.target.value })
             }
-            className="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md
-						 shadow-sm py-2 px-3 text-white focus:outline-none 
-						 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+            className="lux-input mt-1"
             required
           >
             <option value="">Select a category</option>
@@ -171,21 +160,26 @@ const CreateProductForm = () => {
           />
           <label
             htmlFor="image"
-            className="cursor-pointer bg-gray-700 py-2 px-3 border border-gray-600 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-300 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
+            className="cursor-pointer py-2.5 px-4 border rounded-full shadow-sm text-sm leading-4 font-medium transition"
+            style={{
+              background: "rgba(255,253,249,0.96)",
+              borderColor: "var(--color-border)",
+              color: "var(--color-ink)",
+            }}
           >
             <Upload className="h-5 w-5 inline-block mr-2" />
             Upload Image
           </label>
           {newProduct.image && (
-            <span className="ml-3 text-sm text-gray-400">Image uploaded </span>
+            <span className="ml-3 text-sm text-[var(--color-muted)]">
+              Image uploaded
+            </span>
           )}
         </div>
 
         <button
           type="submit"
-          className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md 
-					shadow-sm text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 
-					focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 disabled:opacity-50"
+          className="lux-btn-primary w-full flex justify-center border border-transparent disabled:opacity-50"
           disabled={loading}
         >
           {loading ? (

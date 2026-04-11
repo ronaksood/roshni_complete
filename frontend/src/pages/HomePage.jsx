@@ -2,43 +2,49 @@ import { useEffect } from "react";
 import CategoryItem from "../components/CategoryItem.jsx";
 import { useProductStore } from "../stores/useProductStore";
 import FeaturedProducts from "../components/FeaturedProducts";
-
-const categories = [
-  { href: "/jeans", name: "Jeans", imageUrl: "/jeans.jpg" },
-  { href: "/t-shirts", name: "T-shirts", imageUrl: "/tshirts.jpg" },
-  { href: "/shoes", name: "Shoes", imageUrl: "/shoes.jpg" },
-  { href: "/glasses", name: "Glasses", imageUrl: "/glasses.png" },
-  { href: "/jackets", name: "Jackets", imageUrl: "/jackets.jpg" },
-  { href: "/suits", name: "Suits", imageUrl: "/suits.jpg" },
-  { href: "/bags", name: "Bags", imageUrl: "/bags.jpg" },
-];
+import { jewelleryCategories } from "../lib/brand";
 
 const HomePage = () => {
-  const { fetchFeaturedProducts, products, isLoading } = useProductStore();
+  const { fetchFeaturedProducts, featuredProducts, loading } = useProductStore();
 
   useEffect(() => {
     fetchFeaturedProducts();
   }, [fetchFeaturedProducts]);
-  console.log(products);
 
   return (
-    <div className="relative min-h-screen text-white overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h1 className="text-center text-5xl sm:text-6xl font-bold text-emerald-400 mb-4">
-          Explore Our Categories
-        </h1>
-        <p className="text-center text-xl text-gray-300 mb-12">
-          Discover the latest trends in eco-friendly fashion
-        </p>
+        <section className="lux-card p-8 sm:p-12">
+          <div className="max-w-3xl">
+            <span className="lux-chip">Handcrafted elegance</span>
+            <h1 className="mt-6 font-display text-5xl sm:text-7xl leading-none text-[var(--color-accent-deep)]">
+              Jewellery designed for celebrations, heirlooms, and everyday glow.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg text-[var(--color-muted)]">
+              Discover premium chokers, necklaces, mangalsutras, and watches
+              curated with a warm bridal-luxury aesthetic and real catalogue
+              imagery.
+            </p>
+          </div>
+        </section>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {categories.map((category) => (
+        <div className="mt-14 flex items-end justify-between gap-4">
+          <div>
+            <p className="lux-chip">Collections</p>
+            <h2 className="mt-4 font-display text-4xl text-[var(--color-accent-deep)]">
+              Explore our jewellery categories
+            </h2>
+          </div>
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+          {jewelleryCategories.map((category) => (
             <CategoryItem category={category} key={category.name} />
           ))}
         </div>
 
-        {!isLoading && products.length > 0 && (
-          <FeaturedProducts featuredProducts={products} />
+        {!loading && featuredProducts.length > 0 && (
+          <FeaturedProducts featuredProducts={featuredProducts} />
         )}
       </div>
     </div>

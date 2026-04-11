@@ -1,3 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #f6ebe1;
+    --color-surface: #fcf3ec;
+    --color-surface-strong: #fff7f1;
+    --color-ink: #5b1f33;
+    --color-muted: #8d6d75;
+    --color-border: rgba(91, 31, 51, 0.14);
+    --color-accent: #7c1f3d;
+    --color-accent-deep: #561427;
+    --color-accent-soft: #f2dde3;
+    --color-success: #5f7f63;
+    --shadow-soft: 0 24px 60px rgba(91, 31, 51, 0.12);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at top left, rgba(124, 31, 61, 0.12), transparent 30%),
+      radial-gradient(circle at top right, rgba(236, 211, 198, 0.45), transparent 28%),
+      linear-gradient(180deg, #fff9f4 0%, var(--color-bg) 54%, #f3e6db 100%);
+    color: var(--color-ink);
+    font-family: "Manrope", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 0.02em;
+  }
+
+  img {
+    color: transparent;
+  }
+}
+
+@layer components {
+  .lux-card {
+    @apply rounded-[28px] border shadow-sm backdrop-blur-sm;
+    background: rgba(252, 243, 236, 0.92);
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .lux-panel {
+    @apply rounded-[22px] border;
+    background: rgba(255, 247, 241, 0.95);
+    border-color: var(--color-border);
+  }
+
+  .lux-input {
+    @apply block w-full rounded-2xl border px-4 py-3 text-sm outline-none transition;
+    border-color: rgba(91, 31, 51, 0.16);
+    background: rgba(255, 249, 244, 0.96);
+    color: var(--color-ink);
+  }
+
+  .lux-input::placeholder {
+    color: #b0959e;
+  }
+
+  .lux-input:focus {
+    border-color: rgba(124, 31, 61, 0.42);
+    box-shadow: 0 0 0 4px rgba(124, 31, 61, 0.12);
+  }
+
+  .lux-btn-primary {
+    @apply inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-deep));
+    color: #fffdf9;
+  }
+
+  .lux-btn-primary:hover {
+    filter: brightness(1.03);
+    transform: translateY(-1px);
+  }
+
+  .lux-btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition;
+    background: rgba(255, 247, 241, 0.92);
+    color: var(--color-ink);
+    border: 1px solid var(--color-border);
+  }
+
+  .lux-chip {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em];
+    background: rgba(124, 31, 61, 0.08);
+    color: var(--color-accent-deep);
+  }
+}
