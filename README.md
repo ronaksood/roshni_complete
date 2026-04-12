@@ -33,6 +33,7 @@ This eCommerce platform comes with a wide array of features designed for both cu
 - 📦 **Product & Category Management**: Admins can create, update, and delete products and categories.
 - 👑 **Admin Dashboard**: Includes an admin panel for managing products, users, orders, and sales analytics.
 - 📊 **Sales Analytics**: Visual representation of sales data for admins.
+- 📊 **AR ILLUSION**: Illusion of wearing necklaces in real time.
   ![Homepage](./assets/images/admin.JPG)
 
 ### **Advanced Features:**

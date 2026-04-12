@@ -26,6 +26,11 @@ app.post(
   stripeWebhook
 );
 
+app.use(cors({
+  origin: "https://panipat-frontend.vercel.app/", // Put your actual frontend URL here!
+  credentials: true,
+}));
+
 app.use(express.json({ limit: "10mb" })); // allows you to parse the body of the request
 app.use(cookieParser());
 
