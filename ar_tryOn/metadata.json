@@ -1,0 +1,7 @@
+{
+  "name": "finalAr",
+  "description": "A production-quality, Snapchat-style 2D AR necklace try-on web app that runs entirely in the browser using the webcam and MediaPipe.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

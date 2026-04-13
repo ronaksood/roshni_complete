@@ -1,0 +1,788 @@
+{
+  "last_updated": "2026-04-11T10:30:38.542Z",
+  "executive": {
+    "revenue": 20734858,
+    "profit": 11252022.129664466,
+    "orders": 7429,
+    "conversion_rate": 0.0874,
+    "aov": 2791.0698613541526
+  },
+  "funnel": [
+    {
+      "step": "impression",
+      "count": 150000
+    },
+    {
+      "step": "product_view",
+      "count": 85000
+    },
+    {
+      "step": "3d_view",
+      "count": 42000
+    },
+    {
+      "step": "try_on",
+      "count": 25000
+    },
+    {
+      "step": "add_to_cart",
+      "count": 12000
+    },
+    {
+      "step": "checkout",
+      "count": 8500
+    },
+    {
+      "step": "purchase",
+      "count": 7429
+    }
+  ],
+  "products": [
+    {
+      "id": "P009",
+      "name": "Luxury Earring 9",
+      "category": "Earrings",
+      "price": 2410,
+      "stock": 24,
+      "views": 5043,
+      "try_ons": 2011,
+      "purchases": 699,
+      "revenue": 1684590,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P006",
+      "name": "Luxury Watche 6",
+      "category": "Watches",
+      "price": 3419,
+      "stock": 29,
+      "views": 4260,
+      "try_ons": 1999,
+      "purchases": 453,
+      "revenue": 1548807,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P020",
+      "name": "Luxury Bracelet 20",
+      "category": "Bracelets",
+      "price": 4806,
+      "stock": 7,
+      "views": 3743,
+      "try_ons": 944,
+      "purchases": 252,
+      "revenue": 1211112,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P010",
+      "name": "Luxury Ring 10",
+      "category": "Rings",
+      "price": 3609,
+      "stock": 42,
+      "views": 3812,
+      "try_ons": 1102,
+      "purchases": 322,
+      "revenue": 1162098,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P012",
+      "name": "Luxury Bracelet 12",
+      "category": "Bracelets",
+      "price": 2995,
+      "stock": 42,
+      "views": 4062,
+      "try_ons": 2019,
+      "purchases": 307,
+      "revenue": 919465,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P048",
+      "name": "Luxury Necklace 48",
+      "category": "Necklaces",
+      "price": 4904,
+      "stock": 47,
+      "views": 3781,
+      "try_ons": 613,
+      "purchases": 187,
+      "revenue": 917048,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P028",
+      "name": "Luxury Earring 28",
+      "category": "Earrings",
+      "price": 3144,
+      "stock": 8,
+      "views": 2841,
+      "try_ons": 1096,
+      "purchases": 279,
+      "revenue": 877176,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P024",
+      "name": "Luxury Bracelet 24",
+      "category": "Bracelets",
+      "price": 1722,
+      "stock": 28,
+      "views": 4761,
+      "try_ons": 1238,
+      "purchases": 399,
+      "revenue": 687078,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P001",
+      "name": "Luxury Necklace 1",
+      "category": "Necklaces",
+      "price": 2893,
+      "stock": 88,
+      "views": 3357,
+      "try_ons": 951,
+      "purchases": 233,
+      "revenue": 674069,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P016",
+      "name": "Luxury Watche 16",
+      "category": "Watches",
+      "price": 3756,
+      "stock": 66,
+      "views": 2735,
+      "try_ons": 485,
+      "purchases": 168,
+      "revenue": 631008,
+      "note": "Stable"
+    },
+    {
+      "id": "P031",
+      "name": "Luxury Watche 31",
+      "category": "Watches",
+      "price": 2447,
+      "stock": 48,
+      "views": 1770,
+      "try_ons": 788,
+      "purchases": 239,
+      "revenue": 584833,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P044",
+      "name": "Luxury Bracelet 44",
+      "category": "Bracelets",
+      "price": 4566,
+      "stock": 89,
+      "views": 4123,
+      "try_ons": 622,
+      "purchases": 128,
+      "revenue": 584448,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P049",
+      "name": "Luxury Earring 49",
+      "category": "Earrings",
+      "price": 4971,
+      "stock": 53,
+      "views": 1707,
+      "try_ons": 726,
+      "purchases": 116,
+      "revenue": 576636,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P041",
+      "name": "Luxury Earring 41",
+      "category": "Earrings",
+      "price": 3332,
+      "stock": 58,
+      "views": 3510,
+      "try_ons": 476,
+      "purchases": 165,
+      "revenue": 549780,
+      "note": "Stable"
+    },
+    {
+      "id": "P033",
+      "name": "Luxury Earring 33",
+      "category": "Earrings",
+      "price": 4885,
+      "stock": 59,
+      "views": 2295,
+      "try_ons": 765,
+      "purchases": 108,
+      "revenue": 527580,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P050",
+      "name": "Luxury Earring 50",
+      "category": "Earrings",
+      "price": 2841,
+      "stock": 34,
+      "views": 3190,
+      "try_ons": 1090,
+      "purchases": 164,
+      "revenue": 465924,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P029",
+      "name": "Luxury Ring 29",
+      "category": "Rings",
+      "price": 4091,
+      "stock": 9,
+      "views": 4203,
+      "try_ons": 1173,
+      "purchases": 103,
+      "revenue": 421373,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P026",
+      "name": "Luxury Ring 26",
+      "category": "Rings",
+      "price": 588,
+      "stock": 15,
+      "views": 4974,
+      "try_ons": 2043,
+      "purchases": 698,
+      "revenue": 410424,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P021",
+      "name": "Luxury Necklace 21",
+      "category": "Necklaces",
+      "price": 4953,
+      "stock": 96,
+      "views": 3085,
+      "try_ons": 341,
+      "purchases": 79,
+      "revenue": 391287,
+      "note": "Stable"
+    },
+    {
+      "id": "P045",
+      "name": "Luxury Ring 45",
+      "category": "Rings",
+      "price": 1688,
+      "stock": 87,
+      "views": 4534,
+      "try_ons": 954,
+      "purchases": 230,
+      "revenue": 388240,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P014",
+      "name": "Luxury Bracelet 14",
+      "category": "Bracelets",
+      "price": 4173,
+      "stock": 13,
+      "views": 2952,
+      "try_ons": 853,
+      "purchases": 90,
+      "revenue": 375570,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P013",
+      "name": "Luxury Earring 13",
+      "category": "Earrings",
+      "price": 3712,
+      "stock": 19,
+      "views": 4552,
+      "try_ons": 1686,
+      "purchases": 100,
+      "revenue": 371200,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P023",
+      "name": "Luxury Earring 23",
+      "category": "Earrings",
+      "price": 3718,
+      "stock": 77,
+      "views": 4954,
+      "try_ons": 857,
+      "purchases": 98,
+      "revenue": 364364,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P046",
+      "name": "Luxury Watche 46",
+      "category": "Watches",
+      "price": 4882,
+      "stock": 30,
+      "views": 4445,
+      "try_ons": 785,
+      "purchases": 74,
+      "revenue": 361268,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P036",
+      "name": "Luxury Watche 36",
+      "category": "Watches",
+      "price": 1472,
+      "stock": 74,
+      "views": 1567,
+      "try_ons": 762,
+      "purchases": 241,
+      "revenue": 354752,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P037",
+      "name": "Luxury Bracelet 37",
+      "category": "Bracelets",
+      "price": 2621,
+      "stock": 41,
+      "views": 3968,
+      "try_ons": 731,
+      "purchases": 122,
+      "revenue": 319762,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P018",
+      "name": "Luxury Necklace 18",
+      "category": "Necklaces",
+      "price": 4038,
+      "stock": 3,
+      "views": 4758,
+      "try_ons": 831,
+      "purchases": 76,
+      "revenue": 306888,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P005",
+      "name": "Luxury Necklace 5",
+      "category": "Necklaces",
+      "price": 3911,
+      "stock": 80,
+      "views": 2211,
+      "try_ons": 649,
+      "purchases": 77,
+      "revenue": 301147,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P004",
+      "name": "Luxury Earring 4",
+      "category": "Earrings",
+      "price": 2970,
+      "stock": 26,
+      "views": 1077,
+      "try_ons": 425,
+      "purchases": 94,
+      "revenue": 279180,
+      "note": "Likely to restock soon"
+    },
+    {
+      "id": "P015",
+      "name": "Luxury Watche 15",
+      "category": "Watches",
+      "price": 3528,
+      "stock": 38,
+      "views": 3381,
+      "try_ons": 900,
+      "purchases": 79,
+      "revenue": 278712,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P019",
+      "name": "Luxury Earring 19",
+      "category": "Earrings",
+      "price": 4313,
+      "stock": 95,
+      "views": 1625,
+      "try_ons": 658,
+      "purchases": 53,
+      "revenue": 228589,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P038",
+      "name": "Luxury Ring 38",
+      "category": "Rings",
+      "price": 840,
+      "stock": 97,
+      "views": 4603,
+      "try_ons": 1583,
+      "purchases": 246,
+      "revenue": 206640,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P007",
+      "name": "Luxury Earring 7",
+      "category": "Earrings",
+      "price": 3574,
+      "stock": 69,
+      "views": 1800,
+      "try_ons": 618,
+      "purchases": 51,
+      "revenue": 182274,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P039",
+      "name": "Luxury Ring 39",
+      "category": "Rings",
+      "price": 3428,
+      "stock": 63,
+      "views": 3221,
+      "try_ons": 898,
+      "purchases": 52,
+      "revenue": 178256,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P025",
+      "name": "Luxury Ring 25",
+      "category": "Rings",
+      "price": 3255,
+      "stock": 75,
+      "views": 2631,
+      "try_ons": 728,
+      "purchases": 54,
+      "revenue": 175770,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P017",
+      "name": "Luxury Necklace 17",
+      "category": "Necklaces",
+      "price": 4774,
+      "stock": 33,
+      "views": 3897,
+      "try_ons": 472,
+      "purchases": 33,
+      "revenue": 157542,
+      "note": "Stable"
+    },
+    {
+      "id": "P008",
+      "name": "Luxury Watche 8",
+      "category": "Watches",
+      "price": 3863,
+      "stock": 76,
+      "views": 1636,
+      "try_ons": 384,
+      "purchases": 39,
+      "revenue": 150657,
+      "note": "Likely to restock soon"
+    },
+    {
+      "id": "P032",
+      "name": "Luxury Watche 32",
+      "category": "Watches",
+      "price": 804,
+      "stock": 67,
+      "views": 2962,
+      "try_ons": 878,
+      "purchases": 166,
+      "revenue": 133464,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P003",
+      "name": "Luxury Bracelet 3",
+      "category": "Bracelets",
+      "price": 2479,
+      "stock": 74,
+      "views": 2877,
+      "try_ons": 382,
+      "purchases": 52,
+      "revenue": 128908,
+      "note": "Stable"
+    },
+    {
+      "id": "P030",
+      "name": "Luxury Bracelet 30",
+      "category": "Bracelets",
+      "price": 1356,
+      "stock": 30,
+      "views": 1305,
+      "try_ons": 569,
+      "purchases": 93,
+      "revenue": 126108,
+      "note": "Strong performer (AR driven)"
+    },
+    {
+      "id": "P043",
+      "name": "Luxury Bracelet 43",
+      "category": "Bracelets",
+      "price": 4217,
+      "stock": 24,
+      "views": 1119,
+      "try_ons": 155,
+      "purchases": 26,
+      "revenue": 109642,
+      "note": "Stable"
+    },
+    {
+      "id": "P022",
+      "name": "Luxury Ring 22",
+      "category": "Rings",
+      "price": 2389,
+      "stock": 64,
+      "views": 1274,
+      "try_ons": 325,
+      "purchases": 34,
+      "revenue": 81226,
+      "note": "Stable"
+    },
+    {
+      "id": "P011",
+      "name": "Luxury Ring 11",
+      "category": "Rings",
+      "price": 2201,
+      "stock": 92,
+      "views": 464,
+      "try_ons": 165,
+      "purchases": 26,
+      "revenue": 57226,
+      "note": "Likely to restock soon"
+    },
+    {
+      "id": "P035",
+      "name": "Luxury Ring 35",
+      "category": "Rings",
+      "price": 3814,
+      "stock": 91,
+      "views": 173,
+      "try_ons": 46,
+      "purchases": 15,
+      "revenue": 57210,
+      "note": "Stable"
+    },
+    {
+      "id": "P047",
+      "name": "Luxury Bracelet 47",
+      "category": "Bracelets",
+      "price": 1529,
+      "stock": 61,
+      "views": 1332,
+      "try_ons": 253,
+      "purchases": 34,
+      "revenue": 51986,
+      "note": "Stable"
+    },
+    {
+      "id": "P040",
+      "name": "Luxury Bracelet 40",
+      "category": "Bracelets",
+      "price": 3392,
+      "stock": 4,
+      "views": 542,
+      "try_ons": 241,
+      "purchases": 15,
+      "revenue": 50880,
+      "note": "Stable"
+    },
+    {
+      "id": "P002",
+      "name": "Luxury Ring 2",
+      "category": "Rings",
+      "price": 4007,
+      "stock": 10,
+      "views": 115,
+      "try_ons": 42,
+      "purchases": 9,
+      "revenue": 36063,
+      "note": "Likely to restock soon"
+    },
+    {
+      "id": "P027",
+      "name": "Luxury Necklace 27",
+      "category": "Necklaces",
+      "price": 4968,
+      "stock": 5,
+      "views": 233,
+      "try_ons": 75,
+      "purchases": 7,
+      "revenue": 34776,
+      "note": "Likely to restock soon"
+    },
+    {
+      "id": "P034",
+      "name": "Luxury Necklace 34",
+      "category": "Necklaces",
+      "price": 917,
+      "stock": 28,
+      "views": 1143,
+      "try_ons": 354,
+      "purchases": 35,
+      "revenue": 32095,
+      "note": "Stable"
+    },
+    {
+      "id": "P042",
+      "name": "Luxury Necklace 42",
+      "category": "Necklaces",
+      "price": 3303,
+      "stock": 96,
+      "views": 300,
+      "try_ons": 73,
+      "purchases": 9,
+      "revenue": 29727,
+      "note": "Stable"
+    }
+  ],
+  "ar_performance": {
+    "total_3d_views": 42000,
+    "total_try_ons": 25000,
+    "ar_conversion_rate": 0.18,
+    "non_ar_conversion_rate": 0.04
+  },
+  "ml_insights": {
+    "metrics": {
+      "accuracy": 0.89,
+      "precision": 0.76,
+      "recall": 0.82,
+      "roc_auc": 0.91
+    },
+    "feature_importance": {
+      "views": 0.12,
+      "has_3d_view": 0.25,
+      "has_try_on": 0.45,
+      "price": 0.1,
+      "category_code": 0.08
+    },
+    "recommendation": "Try-on feature is the strongest predictor of purchase. Consider adding 3D assets to top-viewed products lacking them."
+  },
+  "customers": {
+    "total_users": 85000,
+    "new_users": 55000,
+    "returning_users": 30000,
+    "repeat_purchase_rate": 0.24,
+    "clv": 1250,
+    "traffic_sources": [
+      {
+        "name": "Organic Search",
+        "value": 35000
+      },
+      {
+        "name": "Instagram Ads",
+        "value": 25000
+      },
+      {
+        "name": "Direct",
+        "value": 15000
+      },
+      {
+        "name": "Referral",
+        "value": 10000
+      }
+    ],
+    "devices": [
+      {
+        "name": "Mobile (iOS)",
+        "value": 45000
+      },
+      {
+        "name": "Mobile (Android)",
+        "value": 25000
+      },
+      {
+        "name": "Desktop",
+        "value": 15000
+      }
+    ]
+  },
+  "inventory": {
+    "stockout_risk": 8,
+    "overstock_risk": 0,
+    "categories": [
+      {
+        "name": "Necklaces",
+        "stock": 476,
+        "demand": 736
+      },
+      {
+        "name": "Rings",
+        "stock": 645,
+        "demand": 1789
+      },
+      {
+        "name": "Earrings",
+        "stock": 522,
+        "demand": 1927
+      },
+      {
+        "name": "Bracelets",
+        "stock": 413,
+        "demand": 1518
+      },
+      {
+        "name": "Watches",
+        "stock": 428,
+        "demand": 1459
+      }
+    ]
+  },
+  "profit_margin": {
+    "gross_revenue": 20734858,
+    "cogs": 9482835.870335534,
+    "gross_profit": 11252022.129664466,
+    "gross_margin_pct": 54.266212624482236,
+    "discounts_given": 1658788.6400000001,
+    "returns_refunds": 829394.3200000001,
+    "shipping_costs": 111435,
+    "net_profit": 8652404.169664465
+  },
+  "alerts": [
+    {
+      "id": 1,
+      "severity": "high",
+      "title": "Critical Stockout Risk",
+      "message": "3 top-performing necklaces will run out of stock in < 5 days.",
+      "action": "Restock Now"
+    },
+    {
+      "id": 2,
+      "severity": "medium",
+      "title": "High Traffic, Zero Sales",
+      "message": "Luxury Ring 12 has 4,500 views but 0 purchases. Check pricing or 3D asset quality.",
+      "action": "Investigate"
+    },
+    {
+      "id": 3,
+      "severity": "low",
+      "title": "Margin Leakage",
+      "message": "Discount codes are eating 8% of gross revenue this week. Consider reducing promotional depth.",
+      "action": "Review Discounts"
+    },
+    {
+      "id": 4,
+      "severity": "success",
+      "title": "AR Try-On Success",
+      "message": "Watches category saw a 40% lift in conversion after adding new 3D models.",
+      "action": "Scale Strategy"
+    }
+  ],
+  "copilot": [
+    {
+      "role": "system",
+      "content": "I am Aura, your profit intelligence copilot. I analyze your raw data to find hidden revenue opportunities."
+    },
+    {
+      "role": "user",
+      "content": "Why is my net profit margin dropping despite higher sales?"
+    },
+    {
+      "role": "assistant",
+      "content": "Based on the latest data, your gross revenue increased by 12%, but your **Net Profit Margin dropped by 3.2%**. This is driven by two factors:\n\n1. **High Return Rates on Rings:** Luxury Ring 8 and 14 have a 22% return rate, costing $14,500 in refunds. Users report sizing issues.\n2. **Over-discounting:** The \"SPRING20\" promo code was used on 45% of orders, eating $32,000 in potential profit.\n\n**Recommendation:** Pause the SPRING20 promo for high-performing AR products (they convert well without discounts) and add a sizing guide to all Ring product pages."
+    }
+  ]
+}

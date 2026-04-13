@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Intelligence - Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a0b12 0%, #2d1b2e 50%, #1a0b12 100%);
+            color: #e8dcc8;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            animation: shimmer 8s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(10px, -10px); }
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            color: #d4af37;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.4), 0 0 60px rgba(212, 175, 55, 0.2);
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #b8956a;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tagline {
+            font-size: 1em;
+            color: #a89968;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        /* Animated background elements */
+        main::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            filter: blur(40px);
+            animation: float 15s ease-in-out infinite;
+        }
+
+        main::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            right: -10%;
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            filter: blur(40px);
+            animation: float 20s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -30px); }
+        }
+
+        .hub-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hub-card {
+            background: rgba(45, 27, 46, 0.6);
+            border: 2px solid #d4af37;
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.1);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hub-card:nth-child(1) { animation-delay: 0.1s; }
+        .hub-card:nth-child(2) { animation-delay: 0.3s; }
+        .hub-card:nth-child(3) { animation-delay: 0.5s; }
+
+        .hub-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .hub-card:hover::before {
+            left: 100%;
+        }
+
+        .hub-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #ffd700;
+            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.2);
+            background: rgba(45, 27, 46, 0.8);
+        }
+
+        .card-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .hub-card:nth-child(1) .card-icon { animation-delay: 0s; }
+        .hub-card:nth-child(2) .card-icon { animation-delay: 0.2s; }
+        .hub-card:nth-child(3) .card-icon { animation-delay: 0.4s; }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .card-title {
+            font-size: 1.8em;
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-description {
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #d4c5a9;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-features {
+            list-style: none;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-features li {
+            padding: 8px 0;
+            padding-left: 25px;
+            color: #a89968;
+            font-size: 0.9em;
+            position: relative;
+        }
+
+        .card-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            color: #1a0b12;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+            position: relative;
+            z-index: 1;
+            min-width: 200px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, #ffd700, #d4af37);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .info-box {
+            background: rgba(45, 27, 46, 0.7);
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
+        }
+
+        .info-box h3 {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .info-box p {
+            color: #d4c5a9;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 2px solid #d4af37;
+            color: #b8956a;
+            font-size: 0.95em;
+            margin-top: auto;
+        }
+
+        .footer-text {
+            margin-bottom: 10px;
+        }
+
+        /* Particles */
+        .particle {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: #d4af37;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .hub-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            main {
+                padding: 40px 15px;
+            }
+
+            .hub-card {
+                padding: 25px;
+            }
+
+            .card-icon {
+                font-size: 3em;
+            }
+
+            .card-title {
+                font-size: 1.4em;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>✨ Aura Intelligence</h1>
+        <p class="subtitle">AI-Powered Luxury E-Commerce Analytics Platform</p>
+        <p class="tagline">Explore the Complete System Architecture & Workflow</p>
+    </header>
+
+    <main>
+        <div class="hub-container">
+            <!-- Card 1: Workflow Visualization -->
+            <div class="hub-card" onclick="navigateTo('WORKFLOW_VISUALIZATION.html')">
+                <div class="card-icon">📊</div>
+                <div class="card-title">Complete Workflow</div>
+                <p class="card-description">
+                    Explore the complete data processing pipeline from raw events to AI insights. See how data flows through each stage with animated visualizations.
+                </p>
+                <ul class="card-features">
+                    <li>6-Phase Pipeline Visualization</li>
+                    <li>Customer Journey Funnel</li>
+                    <li>ML Model Performance Metrics</li>
+                    <li>Dataset Statistics & Insights</li>
+                    <li>Business Impact Analysis</li>
+                    <li>Feature Importance Rankings</li>
+                </ul>
+                <button class="btn">View Workflow →</button>
+            </div>
+
+            <!-- Card 2: System Design Architecture -->
+            <div class="hub-card" onclick="navigateTo('SYSTEM_DESIGN.html')">
+                <div class="card-icon">💎</div>
+                <div class="card-title">System Design</div>
+                <p class="card-description">
+                    Understand the complete system architecture with animated data flows. See how each component connects and communicates in real-time.
+                </p>
+                <ul class="card-features">
+                    <li>6-Component Architecture</li>
+                    <li>Data Flow Animations</li>
+                    <li>Component Relationships</li>
+                    <li>API Integration Points</li>
+                    <li>Real-time Data Synchronization</li>
+                    <li>AI Copilot Integration</li>
+                </ul>
+                <button class="btn">View System Design →</button>
+            </div>
+
+            <!-- Card 3: Technical Documentation -->
+            <div class="hub-card" onclick="navigateTo('README_COMPLETE.md')">
+                <div class="card-icon">📖</div>
+                <div class="card-title">Documentation</div>
+                <p class="card-description">
+                    Deep dive into comprehensive documentation covering architecture, ML model selection, dataset structure, and implementation details.
+                </p>
+                <ul class="card-features">
+                    <li>Complete Workflow Explanation</li>
+                    <li>ML Model Analysis</li>
+                    <li>Why HistGradientBoosting?</li>
+                    <li>Dataset Deep Dive</li>
+                    <li>Tech Stack Details</li>
+                    <li>Getting Started Guide</li>
+                </ul>
+                <button class="btn">Read Documentation →</button>
+            </div>
+        </div>
+
+        <!-- Info Box -->
+        <div class="info-box" style="margin-top: 50px;">
+            <h3>🎯 Quick Navigation Guide</h3>
+            <p>
+                <strong>New to Aura Intelligence?</strong> Start with the <strong>Complete Workflow</strong> to understand the end-to-end process with animations and visual simulations.
+            </p>
+            <p>
+                <strong>Want to understand the architecture?</strong> Check out the <strong>System Design</strong> diagram showing how all 6 components work together with real-time data flows.
+            </p>
+            <p>
+                <strong>Ready for technical details?</strong> Explore the <strong>Documentation</strong> for deep technical insights into machine learning models, datasets, and implementation strategies.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-text">🌟 Aura Intelligence - AI-Powered Luxury E-Commerce Analytics</p>
+        <p class="footer-text">Built with Python ML • Node.js Backend • React Frontend • Google GenAI</p>
+        <p class="footer-text">© 2026 | For Educational & Commercial Use</p>
+    </footer>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * window.innerWidth + 'px';
+                particle.style.top = Math.random() * window.innerHeight + 'px';
+                particle.style.animation = `float ${5 + Math.random() * 10}s infinite linear`;
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(particle);
+            }
+        }
+
+        createParticles();
+
+        // Navigation function
+        function navigateTo(page) {
+            const fileName = page.split('/').pop();
+            window.location.href = fileName;
+        }
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '1') navigateTo('WORKFLOW_VISUALIZATION.html');
+            if (e.key === '2') navigateTo('SYSTEM_DESIGN.html');
+            if (e.key === '3') navigateTo('README_COMPLETE.md');
+        });
+
+        console.log('🚀 Aura Intelligence Hub Loaded');
+        console.log('💡 Keyboard Shortcuts: Press 1, 2, or 3 to navigate');
+    </script>
+</body>
+</html>

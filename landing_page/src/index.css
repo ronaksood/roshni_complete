@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: "Manrope", sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(125, 49, 72, 0.22), transparent 24%),
+    linear-gradient(180deg, #12070a 0%, #1a0a0f 100%);
+  color: #fffaf2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #12070a;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.card-texture {
+  background-image:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.06) 0%, transparent 18%, transparent 82%, rgba(255, 255, 255, 0.04) 100%),
+    radial-gradient(circle at 20% 24%, rgba(255, 250, 242, 0.08) 0%, transparent 24%),
+    radial-gradient(circle at 82% 78%, rgba(255, 226, 196, 0.08) 0%, transparent 18%);
+}
+
+.card-shimmer {
+  animation: shimmerSweep 1.15s ease-out forwards;
+}
+
+.editorial-heading {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+}
+
+.script-heading {
+  font-family: "Allura", cursive;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+.collection-separator {
+  background:
+    radial-gradient(60% 120% at 50% 100%, rgba(245, 234, 216, 0.26) 0%, rgba(245, 234, 216, 0.1) 24%, transparent 62%),
+    radial-gradient(24% 80% at 18% 100%, rgba(232, 215, 193, 0.16) 0%, transparent 72%),
+    radial-gradient(26% 80% at 82% 100%, rgba(232, 215, 193, 0.14) 0%, transparent 72%),
+    linear-gradient(180deg, transparent 0%, rgba(20, 5, 10, 0.95) 88%);
+  filter: blur(8px);
+}
+
+.collection-top-blend {
+  background:
+    radial-gradient(55% 120% at 50% 100%, rgba(78, 28, 42, 0.96) 0%, rgba(78, 28, 42, 0.82) 24%, rgba(78, 28, 42, 0.36) 48%, transparent 76%),
+    radial-gradient(28% 90% at 18% 100%, rgba(232, 215, 193, 0.14) 0%, transparent 70%),
+    radial-gradient(28% 90% at 82% 100%, rgba(232, 215, 193, 0.14) 0%, transparent 70%),
+    linear-gradient(180deg, transparent 0%, rgba(25, 7, 13, 0.94) 88%);
+  filter: blur(10px);
+  mask-image: radial-gradient(85% 100% at 50% 100%, black 35%, transparent 100%);
+}
+
+.packaging-neon {
+  color: #d9bea0;
+  text-shadow:
+    0 0 8px rgba(125, 49, 72, 0.35),
+    0 0 18px rgba(125, 49, 72, 0.42),
+    0 0 32px rgba(79, 31, 45, 0.55);
+}
+
+@keyframes particleDrift {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: translate3d(0, 0, 0) scale(0.9);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: translate3d(0, -24px, 0) scale(1.25);
+  }
+}
+
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-120%) skewX(-12deg);
+  }
+
+  100% {
+    transform: translateX(340%) skewX(-12deg);
+  }
+}

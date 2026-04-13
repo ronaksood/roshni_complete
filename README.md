@@ -1,7 +1,7 @@
 # 🚀 Full-Stack E-Commerce Platform (MERN Stack + Stripe)
 
 Welcome to my Full-Stack E-Commerce platform! This project is built using the **MERN stack** (MongoDB, Express, React, Node.js) with advanced features such as **Stripe Payment Integration** and **JWT-based authentication**. It demonstrates a real-world application with a focus on **scalability**, **security**, and **performance**.
-![Homepage](./assets/images/home.JPG)
+
 
 ---
 
@@ -28,13 +28,11 @@ This eCommerce platform comes with a wide array of features designed for both cu
 
 - 🛒 **Shopping Cart Functionality**: Add products to the cart and manage the cart across sessions.
 - 💳 **Checkout with Stripe**: Seamless payment processing using Stripe's secure payment gateway.
-  ![Homepage](./assets/images/cart.JPG)
 - 🏷️ **Coupon Code System**: Apply discount codes at checkout to reduce the total price.
 - 📦 **Product & Category Management**: Admins can create, update, and delete products and categories.
 - 👑 **Admin Dashboard**: Includes an admin panel for managing products, users, orders, and sales analytics.
 - 📊 **Sales Analytics**: Visual representation of sales data for admins.
 - 📊 **AR ILLUSION**: Illusion of wearing necklaces in real time.
-  ![Homepage](./assets/images/admin.JPG)
 
 ### **Advanced Features:**
 
@@ -59,8 +57,3 @@ This project is built using the following technologies:
 - **Payments**: Stripe API
 - **Authentication**: JWT (JSON Web Tokens)
 - **Version Control**: Git
-
----
-# panipat-backend
-# panipat-backend
-# panipat-backend
