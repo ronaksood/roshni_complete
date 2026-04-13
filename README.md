@@ -989,18 +989,6 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📄 **License**
-
-This project is licensed under the ISC License - see the LICENSE file for details.
-
----
-
-## 📞 **Support**
-
-For support, email support@roshnicient.com or open an issue on GitHub.
-
----
-
 ## 🙏 **Acknowledgments**
 
 - MediaPipe for face detection technology
